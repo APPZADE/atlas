@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --deep-void: #050510;
+  --neon-cyan: #00f3ff;
+  --neon-purple: #bd00ff;
+  --neon-pink: #ff00ff;
+  --glass-bg: rgba(5, 5, 16, 0.7);
+  --glass-border: rgba(0, 243, 255, 0.1);
+
+  --font-orbitron: 'Orbitron', sans-serif;
+}
+
+body {
+  color: #e2e8f0;
+  background-color: var(--deep-void);
+  background-image:
+    radial-gradient(circle at 15% 50%, rgba(189, 0, 255, 0.05), transparent 25%),
+    radial-gradient(circle at 85% 30%, rgba(0, 243, 255, 0.05), transparent 25%);
+  font-family: var(--font-inter), sans-serif;
+  overflow-x: hidden;
+}
+
+/* Premium Glass Panel */
+.glass-panel-premium {
+  background: rgba(10, 10, 25, 0.6);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Glitch Animation Keyframes */
+@keyframes glitch {
+  0% {
+    transform: translate(0)
+  }
+
+  20% {
+    transform: translate(-2px, 2px)
+  }
+
+  40% {
+    transform: translate(-2px, -2px)
+  }
+
+  60% {
+    transform: translate(2px, 2px)
+  }
+
+  80% {
+    transform: translate(2px, -2px)
+  }
+
+  100% {
+    transform: translate(0)
+  }
+}
+
+.glitch-hover:hover {
+  animation: glitch 0.3s cubic-bezier(.25, .46, .45, .94) both infinite;
+  color: var(--neon-cyan);
+  text-shadow: 2px 0 var(--neon-purple), -2px 0 var(--neon-pink);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--deep-void);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--neon-cyan);
+}
